@@ -15,6 +15,7 @@ subprojects {
     group = "darom.study"
 }
 
-    dependencies {
+dependencies {
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.6.1'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
