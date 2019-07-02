@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import math.ZigZagConversion;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ZigZagTest {

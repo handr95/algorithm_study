@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import hash.AddTwoNumbers;
+import hash.JewelsAndStones;
 import hash.ListNode;
 import hash.TwoSum;
 
@@ -35,5 +36,12 @@ public class HashTest {
 
         AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
         assertThat(addTwoNumbers.addTwoNumbers(listNode1, listNode4)).isEqualTo(listNode7);
+    }
+
+    @Test
+    public void jewels_and_stones_test() {
+        JewelsAndStones jewelsAndStones = new JewelsAndStones();
+        assertThat(jewelsAndStones.numJewelsInStones("aA", "aAAbbbb")).isEqualTo(3);
+        assertThat(jewelsAndStones.numJewelsInStones("z", "ZZ")).isEqualTo(0);
     }
 }
