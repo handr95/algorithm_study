@@ -1,4 +1,4 @@
-package temp;
+package array;
 
 /**
  * 배열과 문자열

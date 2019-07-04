@@ -1,4 +1,4 @@
-package temp;
+package array;
 
 public class SubtractOne {
 }
