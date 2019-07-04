@@ -3,6 +3,8 @@ import org.junit.Test;
 import array.CircularPermutationCheck;
 import array.DuplicationCheck;
 import array.PermutationCheck;
+import array.StringCompression;
+import array.SubtractOne;
 import array.URLConverter;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -34,5 +36,23 @@ public class ArrayTest {
     public void circular_permutation_check_test() {
         CircularPermutationCheck circularPermutationCheck = new CircularPermutationCheck();
         assertThat(circularPermutationCheck.circular_permutation_check("Tact Coa")).isTrue();
+    }
+
+    @Test
+    public void subtract_one_test() {
+        SubtractOne subtractOne = new SubtractOne();
+        assertThat(subtractOne.subtract_one("pale", "ple")).isTrue();
+        assertThat(subtractOne.subtract_one("pales", "pale")).isTrue();
+        assertThat(subtractOne.subtract_one("pale", "bale")).isTrue();
+        assertThat(subtractOne.subtract_one("pale", "plee")).isFalse();
+    }
+
+    @Test
+    public void string_compression() {
+        StringCompression stringCompression = new StringCompression();
+        assertThat(stringCompression.string_compression("aabcccccaaa")).isEqualTo("a2b1c5a3");
+        assertThat(stringCompression.string_compression("aa")).isEqualTo("a2");
+        assertThat(stringCompression.string_compression("ab")).isEqualTo("a1b1");
+        assertThat(stringCompression.string_compression("a")).isEqualTo("a1");
     }
 }
