@@ -1,3 +1,4 @@
+import math.ZigZagConversionSolution;
 import org.junit.Test;
 
 import math.ZigZagConversion;
