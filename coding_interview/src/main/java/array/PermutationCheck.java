@@ -11,20 +11,46 @@ import java.util.Arrays;
  */
 public class PermutationCheck {
     public boolean permutation_check(String a, String b) {
-        if (a.length() != b.length()) {
+        if (a.length() != b.length()) { //문자열이 길이가 다르다면 순열관계가 아님
             return false;
         }
 
-        if (sortString(a).equals(sortString(b))) {
-            return true;
-        }
-
-        return false;
+        return sortString(a).equals(sortString(b)); //문자열 정열 후 동일한지 비교
     }
 
     public String sortString(String s){
         char[] chars = s.toCharArray();
         Arrays.sort(chars);
         return String.valueOf(chars);
+    }
+
+
+    /**
+     *
+     * @param a ascii 사용한다 가정
+     * @param b ascii 사용한다 가정
+     * @return
+     */
+    public boolean permutation_check_solution(String a, String b) {
+        if (a.length() != b.length()) { //문자열이 길이가 다르다면 순열관계가 아님
+            return false;
+        }
+
+        int[] letters = new int[128];
+
+        char[] s_Array = a.toCharArray();
+        for(char c : s_Array) { //s 내에서 각 문자열의 출연 횟수를 센다.
+            letters[c] ++;
+        }
+
+        for (int i = 0; i < b.length(); i ++) {
+            int c = (int) b.charAt(i);
+            letters[c]--;
+            if(letters[c] < 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
