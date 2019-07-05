@@ -22,8 +22,6 @@ public class CircularPermutationCheckSolution {
 
     /**
      * 각 문자에 숫자를 대응시킨다. a -> 0
-     * @param c
-     * @return
      */
     private int getCharNumber(Character c) {
         int a = Character.getNumericValue('a');
@@ -37,5 +35,22 @@ public class CircularPermutationCheckSolution {
 
     private int[] buildCharFrequencyTable(String phrase) {
         return new int[0];
+    }
+
+    public boolean isPermutationOfPalidrome(String phrase) {
+        int countOdd = 0;
+        int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
+        for (char c : phrase.toCharArray()) {
+            int x = getCharNumber(c);
+            if(x != -1) {
+                table[x]++;
+                if (table[x] % 2 == 1) {
+                    countOdd ++;
+                } else {
+                    countOdd --;
+                }
+            }
+        }
+        return countOdd <= 1;
     }
 }

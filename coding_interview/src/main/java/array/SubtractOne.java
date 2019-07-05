@@ -9,22 +9,18 @@ package array;
  */
 public class SubtractOne {
     public boolean subtract_one(String a, String b) {
-        if (a.length() - b.length() < -1 || a.length() - b.length() > 1 ) {
-            return false;
-        }
-
         char[] charsA = a.toCharArray();
         char[] charsB = b.toCharArray();
 
         if (charsA.length == charsB.length) {
             return equalSizeOneEditCheck(charsA, charsB);
-        } else if(charsA.length > charsB.length) {
+        } else if(charsA.length + 1 == charsB.length) {
             return nonEqualSizeOneEditCheck(charsA, charsB);
-        } else if(charsA.length < charsB.length) {
+        } else if(charsA.length - 1 ==  charsB.length) {
             return nonEqualSizeOneEditCheck(charsB, charsA);
         }
 
-        return true;
+        return false;
     }
 
     public boolean equalSizeOneEditCheck(char[] a, char[] b) {

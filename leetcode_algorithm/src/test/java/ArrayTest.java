@@ -2,9 +2,8 @@ import org.junit.Test;
 
 import array.ContainerWithMostWater;
 import array.ContainerWithMostWaterSolution;
-import binarysearch.FindFirstAndLastPosition;
-import binarysearch.FindFirstAndLastPositionSolution;
 import array.ProductOfArrayExceptSelf;
+import binarysearch.IntersectionOfTwoArrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -32,17 +31,9 @@ public class ArrayTest {
     }
 
     @Test
-    public void find_first_and_last_position_test () {
-        FindFirstAndLastPosition findFirstAndLastPosition = new FindFirstAndLastPosition();
-        assertThat(findFirstAndLastPosition.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8)).isEqualTo(new int[]{3, 4});
-        assertThat(findFirstAndLastPosition.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 6)).isEqualTo(new int[]{-1, -1});
-    }
-
-    @Test
-    public void find_first_and_last_position_solution_test () {
-        FindFirstAndLastPositionSolution findFirstAndLastPosition = new FindFirstAndLastPositionSolution();
-        assertThat(findFirstAndLastPosition.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8)).isEqualTo(new int[]{3, 4});
-        assertThat(findFirstAndLastPosition.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 6)).isEqualTo(new int[]{-1, -1});
-        assertThat(findFirstAndLastPosition.searchRange(new int[]{5, 7, 7, 7, 7, 8, 8, 10}, 8)).isEqualTo(new int[]{5, 6});
+    public void intersection_of_two_arrays () {
+        IntersectionOfTwoArrays intersectionOfTwoArrays = new IntersectionOfTwoArrays();
+        assertThat(intersectionOfTwoArrays.intersection(new int[]{1,2,2,1}, new int[]{2,2})).contains(new int[]{2});
+        assertThat(intersectionOfTwoArrays.intersection(new int[]{4,9,5}, new int[]{9,4,9,8,4})).contains(new int[]{9,4});
     }
 }
