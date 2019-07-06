@@ -1,6 +1,6 @@
 package array;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * 15. 3Sum (https://leetcode.com/problems/3sum/)
@@ -25,7 +25,25 @@ import java.util.List;
  */
 public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < nums.length - 2; i++) {
+            for (int j =  i + 1; j < nums.length - 1; j++) {
+                for (int k =  j + 1; k < nums.length; k++) {
+                    if (nums[i] + nums[j] + nums[k] == 0) {
+                        System.out.println("nums[i] : " +nums[i] + ", nums[j] : " + nums[j] + ", nums[k] : " + nums[k] + ", i  : " + i + ", j : " + j + ", k : " + k);
 
-        return null;
+                        List<Integer> sumList = new ArrayList<>();
+                        sumList.add(nums[i]);
+                        sumList.add(nums[j]);
+                        sumList.add(nums[k]);
+                        sumList.sort(Comparator.naturalOrder());
+                        if (!result.contains(sumList))
+                            result.add(sumList);
+                    }
+                }
+            }
+        }
+
+        return result;
     }
 }
