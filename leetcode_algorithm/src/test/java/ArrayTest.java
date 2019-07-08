@@ -1,13 +1,15 @@
-import array.ThreeSum;
 import org.junit.Test;
-
-import array.ContainerWithMostWater;
-import array.ContainerWithMostWaterSolution;
-import array.ProductOfArrayExceptSelf;
-import binarysearch.IntersectionOfTwoArrays;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import array.ContainerWithMostWater;
+import array.ContainerWithMostWaterSolution;
+import array.MaxIncreasetoKeepCitySkyline;
+import array.ProductOfArrayExceptSelf;
+import array.ThreeSum;
+import array.ThreeSumSolution;
+import binarysearch.IntersectionOfTwoArrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -55,5 +57,28 @@ public class ArrayTest {
         //assertThat(threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4})).contains(result1);
         //assertThat(threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4})).contains(result2);
         assertThat(threeSum.threeSum(new int[]{3,0,-2,-1,1,2})).contains(result2);
+    }
+
+
+    @Test
+    public void three_sum_soluction_test () {
+        ThreeSumSolution threeSum = new ThreeSumSolution();
+        List<Integer> result1 = new ArrayList<>();
+        result1.add(-1);
+        result1.add(0);
+        result1.add(1);
+        List<Integer> result2 = new ArrayList<>();
+        result1.add(-1);
+        result1.add(-1);
+        result1.add(2);
+        //assertThat(threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4})).contains(result1);
+        //assertThat(threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4})).contains(result2);
+        assertThat(threeSum.threeSum(new int[]{3,0,-2,-1,1,2})).contains(result2);
+    }
+
+    @Test
+    public void max_increase_to_keep_city_skyline () {
+        MaxIncreasetoKeepCitySkyline maxIncreasetoKeepCitySkyline = new MaxIncreasetoKeepCitySkyline();
+        assertThat(maxIncreasetoKeepCitySkyline.maxIncreaseKeepingSkyline(new int[][]{{3,0,8,4},{2,4,5,7},{9,2,6,3},{0,3,1,0}})).isEqualTo(35);
     }
 }

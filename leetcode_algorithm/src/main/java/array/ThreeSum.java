@@ -30,8 +30,6 @@ public class ThreeSum {
             for (int j =  i + 1; j < nums.length - 1; j++) {
                 for (int k =  j + 1; k < nums.length; k++) {
                     if (nums[i] + nums[j] + nums[k] == 0) {
-                        System.out.println("nums[i] : " +nums[i] + ", nums[j] : " + nums[j] + ", nums[k] : " + nums[k] + ", i  : " + i + ", j : " + j + ", k : " + k);
-
                         List<Integer> sumList = new ArrayList<>();
                         sumList.add(nums[i]);
                         sumList.add(nums[j]);
