@@ -4,6 +4,8 @@ import hash.AddTwoNumbers;
 import hash.JewelsAndStones;
 import hash.ListNode;
 import hash.TwoSum;
+import hash.ValidSudoku;
+import hash.ValidSudokuSolution;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -43,5 +45,65 @@ public class HashTest {
         JewelsAndStones jewelsAndStones = new JewelsAndStones();
         assertThat(jewelsAndStones.numJewelsInStones("aA", "aAAbbbb")).isEqualTo(3);
         assertThat(jewelsAndStones.numJewelsInStones("z", "ZZ")).isEqualTo(0);
+    }
+
+    @Test
+    public void valid_sudoku_test() {
+        ValidSudoku validSudoku = new ValidSudoku();
+        char[][] board1 = {
+            {'5','3','.','.','7','.','.','.','.'},
+            {'6','.','.','1','9','5','.','.','.'},
+            {'.','9','8','.','.','.','.','6','.'},
+            {'8','.','.','.','6','.','.','.','3'},
+            {'4','.','.','8','.','3','.','.','1'},
+            {'7','.','.','.','2','.','.','.','6'},
+            {'.','6','.','.','.','.','2','8','.'},
+            {'.','.','.','4','1','9','.','.','5'},
+            {'.','.','.','.','8','.','.','7','9'}
+        };
+        assertThat(validSudoku.isValidSudoku(board1)).isEqualTo(true);
+
+        char[][] board2 = {
+            {'8','3','.','.','7','.','.','.','.'},
+            {'6','.','.','1','9','5','.','.','.'},
+            {'.','9','8','.','.','.','.','6','.'},
+            {'8','.','.','.','6','.','.','.','3'},
+            {'4','.','.','8','.','3','.','.','1'},
+            {'7','.','.','.','2','.','.','.','6'},
+            {'.','6','.','.','.','.','2','8','.'},
+            {'.','.','.','4','1','9','.','.','5'},
+            {'.','.','.','.','8','.','.','7','9'}
+        };
+        assertThat(validSudoku.isValidSudoku(board2)).isEqualTo(false);
+    }
+
+    @Test
+    public void valid_sudoku_solution_test() {
+        ValidSudokuSolution validSudoku = new ValidSudokuSolution();
+        char[][] board1 = {
+            {'5','3','.','.','7','.','.','.','.'},
+            {'6','.','.','1','9','5','.','.','.'},
+            {'.','9','8','.','.','.','.','6','.'},
+            {'8','.','.','.','6','.','.','.','3'},
+            {'4','.','.','8','.','3','.','.','1'},
+            {'7','.','.','.','2','.','.','.','6'},
+            {'.','6','.','.','.','.','2','8','.'},
+            {'.','.','.','4','1','9','.','.','5'},
+            {'.','.','.','.','8','.','.','7','9'}
+        };
+        assertThat(validSudoku.isValidSudoku(board1)).isEqualTo(true);
+
+        char[][] board2 = {
+            {'8','3','.','.','7','.','.','.','.'},
+            {'6','.','.','1','9','5','.','.','.'},
+            {'.','9','8','.','.','.','.','6','.'},
+            {'8','.','.','.','6','.','.','.','3'},
+            {'4','.','.','8','.','3','.','.','1'},
+            {'7','.','.','.','2','.','.','.','6'},
+            {'.','6','.','.','.','.','2','8','.'},
+            {'.','.','.','4','1','9','.','.','5'},
+            {'.','.','.','.','8','.','.','7','9'}
+        };
+        assertThat(validSudoku.isValidSudoku(board2)).isEqualTo(false);
     }
 }
