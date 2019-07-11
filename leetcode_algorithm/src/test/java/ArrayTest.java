@@ -1,14 +1,9 @@
+import array.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import array.ContainerWithMostWater;
-import array.ContainerWithMostWaterSolution;
-import array.MaxIncreasetoKeepCitySkyline;
-import array.ProductOfArrayExceptSelf;
-import array.ThreeSum;
-import array.ThreeSumSolution;
 import binarysearch.IntersectionOfTwoArrays;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -80,5 +75,11 @@ public class ArrayTest {
     public void max_increase_to_keep_city_skyline () {
         MaxIncreasetoKeepCitySkyline maxIncreasetoKeepCitySkyline = new MaxIncreasetoKeepCitySkyline();
         assertThat(maxIncreasetoKeepCitySkyline.maxIncreaseKeepingSkyline(new int[][]{{3,0,8,4},{2,4,5,7},{9,2,6,3},{0,3,1,0}})).isEqualTo(35);
+    }
+
+    @Test
+    public void merge_intervals_test () {
+        MergeIntervals mergeIntervals = new MergeIntervals();
+        assertThat(mergeIntervals.merge(new int[][]{{1,3},{2,6},{8,10},{15,18}})).isEqualTo(new int[][]{{1,6},{8,10},{15,18}});
     }
 }
