@@ -16,10 +16,13 @@ package hash;
  */
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
         ListNode result = new ListNode(0);
         ListNode resultTemp = result;
+        ListNode tempNode = null;
         while (head.next != null) {
-            ListNode tempNode = null;
             ListNode temp = head;
             while (temp.next != null) {
                 tempNode = temp;
@@ -31,6 +34,7 @@ public class ReverseLinkedList {
             if (tempNode != null)
                 tempNode.next = null;
         }
+        result.val = tempNode.val;
 
         return resultTemp;
     }
