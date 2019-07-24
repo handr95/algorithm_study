@@ -1,11 +1,5 @@
+import hash.*;
 import org.junit.Test;
-
-import hash.AddTwoNumbers;
-import hash.JewelsAndStones;
-import hash.ListNode;
-import hash.TwoSum;
-import hash.ValidSudoku;
-import hash.ValidSudokuSolution;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -105,5 +99,31 @@ public class HashTest {
             {'.','.','.','.','8','.','.','7','9'}
         };
         assertThat(validSudoku.isValidSudoku(board2)).isEqualTo(false);
+    }
+
+    @Test
+    public void reverse_linked_list() {
+        ListNode listNode1 = new ListNode(1);
+        ListNode listNode2 = new ListNode(2);
+        ListNode listNode3 = new ListNode(3);
+        ListNode listNode4 = new ListNode(4);
+        ListNode listNode5 = new ListNode(5);
+        listNode1.next = listNode2;
+        listNode2.next = listNode3;
+        listNode3.next = listNode4;
+        listNode4.next = listNode5;
+
+        ListNode listNodeResult1 = new ListNode(5);
+        ListNode listNodeResult2 = new ListNode(4);
+        ListNode listNodeResult3 = new ListNode(3);
+        ListNode listNodeResult4 = new ListNode(2);
+        ListNode listNodeResult5 = new ListNode(1);
+        listNodeResult1.next = listNodeResult2;
+        listNodeResult2.next = listNodeResult3;
+        listNodeResult3.next = listNodeResult4;
+        listNodeResult4.next = listNodeResult5;
+
+        ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+        assertThat(reverseLinkedList.reverseList(listNode1)).isEqualTo(listNodeResult1);
     }
 }
