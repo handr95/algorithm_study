@@ -126,4 +126,10 @@ public class HashTest {
         ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
         assertThat(reverseLinkedList.reverseList(listNode1)).isEqualTo(listNodeResult1);
     }
+
+    @Test
+    public void group_anagrams_test(){
+        GroupAnagrams groupAnagrams = new GroupAnagrams();
+        System.out.println(groupAnagrams.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
+    }
 }
