@@ -82,4 +82,11 @@ public class ArrayTest {
         MergeIntervals mergeIntervals = new MergeIntervals();
         assertThat(mergeIntervals.merge(new int[][]{{1,3},{2,6},{8,10},{15,18}})).isEqualTo(new int[][]{{1,6},{8,10},{15,18}});
     }
+
+    @Test
+    public void majority_element_test() {
+        MajorityElement majorityElement = new MajorityElement();
+        assertThat(majorityElement.majorityElement(new int[]{3, 2, 3})).isEqualTo(3);
+        assertThat(majorityElement.majorityElement(new int[]{2, 2, 1, 1, 1, 2, 2})).isEqualTo(2);
+    }
 }
