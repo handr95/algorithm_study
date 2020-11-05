@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import bit.BitwiseAndOfNumbersRange;
 import bit.CountingBits;
 import bit.CountingBitsSolution;
 import bit.NumberOfBits;
@@ -42,5 +43,15 @@ public class BitTest {
         assertThat(numberOfBits.hammingWeight(00000000000000000000000000001011)).isEqualTo(3);
         assertThat(numberOfBits.hammingWeight(00000000000000000000000010000000)).isEqualTo(1);
         //assertThat(numberOfBits.hammingWeight(11111111111111111111111111111101)).isEqualTo(31);
+    }
+
+    @Test
+    public void bitwise_and_of_number_range_test() {
+        BitwiseAndOfNumbersRange bitwiseAndOfNumbersRange = new BitwiseAndOfNumbersRange();
+        assertThat(bitwiseAndOfNumbersRange.rangeBitwiseAnd(5,7)).isEqualTo(4);
+        assertThat(bitwiseAndOfNumbersRange.rangeBitwiseAnd(0,1)).isEqualTo(0);
+        assertThat(bitwiseAndOfNumbersRange.rangeBitwiseAnd(20000,2147483647)).isEqualTo(0);
+
+
     }
 }
